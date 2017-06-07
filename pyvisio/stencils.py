@@ -3,9 +3,9 @@
 
 import logging
 import os
-from visCOM import visCOMobject as vCOM
-from visCOM import visCOMconstants as vC
-from visCOM import com_error
+from .visCOM import visCOMobject as vCOM
+from .visCOM import visCOMconstants as vC
+from .visCOM import com_error
 
 logging.info("stencils loaded...")
 logger = logging.getLogger(__name__)
@@ -245,7 +245,7 @@ class VisStencils(object):
         :return: Str
         """
         if len(self.__shapes) > 0:
-            return "['" + "', '".join(self.__shapes.keys()) + "']"
+            return "['" + "', '".join(list(self.__shapes.keys())) + "']"
         else:
             return "[]"
 

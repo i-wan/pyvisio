@@ -3,10 +3,10 @@
 
 import logging
 import os
-from visCOM import visCOMobject as vCOM
-from visCOM import visCOMconstants as vC
-from stencils import VisStencils
-from documents import VisDocument
+from .visCOM import visCOMobject as vCOM
+from .visCOM import visCOMconstants as vC
+from .stencils import VisStencils
+from .documents import VisDocument
 
 logging.info("shapes loaded...")
 logger = logging.getLogger(__name__)
@@ -328,7 +328,7 @@ class VisShape(object):
         """
         Set text
         """
-        self._shape.Text = unicode(textval)
+        self._shape.Text = str(textval)
 
     @property
     def linecolor(self):
@@ -336,7 +336,7 @@ class VisShape(object):
 
     @linecolor.setter
     def linecolor(self, fillformula):
-        self._shape.CellsU("LineColor").FormulaU = unicode(fillformula)
+        self._shape.CellsU("LineColor").FormulaU = str(fillformula)
 
     def setlinecolor(self, red=0, green=0, blue=0):
         """
@@ -352,7 +352,7 @@ class VisShape(object):
 
     @fillcolor.setter
     def fillcolor(self, fillformula):
-        self._shape.CellsU("Fillforegnd").FormulaU = unicode(fillformula)
+        self._shape.CellsU("Fillforegnd").FormulaU = str(fillformula)
 
     def setfillcolor(self, red=0, green=0, blue=0):
         """
@@ -530,7 +530,7 @@ class VisConnector(VisShape):
             self._shape.Cells("Prop.Port_A_Port_Name").FormulaU = "=\"{0}\"".format(descA)
             self._shape.Cells("Prop.Port_B_Port_Name").FormulaU = "=\"{0}\"".format(descB)
         else:
-            self._shape.Text = unicode(textval)
+            self._shape.Text = str(textval)
 
     def route_style(self, style=0):
         self._shape.setcell("ShapeRouteStyle", style, preformated=False)

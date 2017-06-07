@@ -12,10 +12,10 @@ __copyright__ = "Copyright (c) 2015"
 __license__ = "MIT"
 __status__ = "Development"
 
-from visCOM import *
-from documents import *
-from stencils import *
-from shapes import *
+from .visCOM import *
+from .documents import *
+from .stencils import *
+from .shapes import *
 
 if __name__ == "__main__":
     import doctest

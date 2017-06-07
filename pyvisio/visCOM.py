@@ -21,7 +21,7 @@ visCOMobject = None
 #TODO move to class possible singleton
 try:
     visCOMobject = EnsureDispatch("Visio.Application")
-except com_error, details:
+except com_error as details:
     logger.error("Exception: {0}".format(details[1]))
     logger.error("It was not possible to initiate Visio COM object! Exiting...")
     raise

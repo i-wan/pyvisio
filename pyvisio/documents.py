@@ -2,9 +2,9 @@
 """PyVisio documents - Visio Document manipulation module"""
 
 import logging
-from visCOM import visCOMobject as vCOM
+from .visCOM import visCOMobject as vCOM
 #from visCOM import visCOMconstants as vC
-from visCOM import com_error
+from .visCOM import com_error
 
 logging.info("documents loaded...")
 logger = logging.getLogger(__name__)
